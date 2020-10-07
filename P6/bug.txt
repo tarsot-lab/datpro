@@ -1,0 +1,4 @@
+Referente a la práctica 6, hay un fallo en la imagen v18.09.0 para docker-machine de boot2docker  https://github.com/boot2docker/boot2docker/issues/1349
+Que hace que falle el curl://192.168.99.100:8080
+
+Podéis utilizar una imagen un poco más antigua que va bien. Para crear una máquina ejecutáis: docker-machine create --virtualbox-boot2docker-url https://github.com/boot2docker/boot2docker/releases/download/v18.06.1-ce/boot2docker.iso

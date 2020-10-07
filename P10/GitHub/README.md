@@ -1,0 +1,1 @@
+This template lets you create a N node Gluster File System on Ubuntu. Using the copy loop feature of ARM templates, you can provision 2, 4, 6 or 8 nodes in a cluster with a replication factor of 2. Each node has a public IP and has 2 disks stripped into raid0.

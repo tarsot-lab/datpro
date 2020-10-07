@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "hostOs": {
+      "value": "Ubuntu"
+    },
+    "scaleNumber": {
+      "value": 4
+    },
+    "adminUsername": {
+      "value": null
+    },
+    "adminPassword": {
+      "value": null
+    },
+    "vmSize": {
+      "value": "Standard_A1"
+    },
+    "diskSize": {
+      "value": 1024
+    },
+    "vmNamePrefix": {
+      "value": "gluster"
+    },
+    "vnetAddressPrefix": {
+      "value": "10.0.0.0/16"
+    },
+    "gfsSubnetName": {
+      "value": "gfs-subnet"
+    },
+    "gfsSubnetPrefix": {
+      "value": "10.0.0.0/24"
+    },
+    "volumeName": {
+      "value": "gfsvol"
+    },
+    "location": {
+      "value": "[resourceGroup().location]"
+    }
+  }
+}

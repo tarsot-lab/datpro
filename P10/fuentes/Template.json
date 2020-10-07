@@ -1,0 +1,1140 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "extensions_gfs_config_storageAccountName": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_gfs_config_storageAccountKey": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_gfs_config_commandToExecute": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_gfs_config_storageAccountName_1": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_gfs_config_storageAccountKey_1": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_gfs_config_commandToExecute_1": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_gfs_config_storageAccountName_2": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_gfs_config_storageAccountKey_2": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_gfs_config_commandToExecute_2": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_gfs_config_storageAccountName_3": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_gfs_config_storageAccountKey_3": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_gfs_config_commandToExecute_3": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "loadBalancers_balancer_name": {
+            "defaultValue": "balancer",
+            "type": "String"
+        },
+        "networkInterfaces_nic0_name": {
+            "defaultValue": "nic0",
+            "type": "String"
+        },
+        "networkInterfaces_nic1_name": {
+            "defaultValue": "nic1",
+            "type": "String"
+        },
+        "networkInterfaces_nic2_name": {
+            "defaultValue": "nic2",
+            "type": "String"
+        },
+        "networkInterfaces_nic3_name": {
+            "defaultValue": "nic3",
+            "type": "String"
+        },
+        "publicIPAddresses_pip0_name": {
+            "defaultValue": "pip0",
+            "type": "String"
+        },
+        "publicIPAddresses_pip1_name": {
+            "defaultValue": "pip1",
+            "type": "String"
+        },
+        "publicIPAddresses_pip2_name": {
+            "defaultValue": "pip2",
+            "type": "String"
+        },
+        "publicIPAddresses_pip3_name": {
+            "defaultValue": "pip3",
+            "type": "String"
+        },
+        "storageAccounts_tarsot_name": {
+            "defaultValue": "tarsot",
+            "type": "String"
+        },
+        "virtualMachines_tarsot0_name": {
+            "defaultValue": "tarsot0",
+            "type": "String"
+        },
+        "virtualMachines_tarsot1_name": {
+            "defaultValue": "tarsot1",
+            "type": "String"
+        },
+        "virtualMachines_tarsot2_name": {
+            "defaultValue": "tarsot2",
+            "type": "String"
+        },
+        "virtualMachines_tarsot3_name": {
+            "defaultValue": "tarsot3",
+            "type": "String"
+        },
+        "virtualNetworks_gfs_vnet_name": {
+            "defaultValue": "gfs-vnet",
+            "type": "String"
+        },
+        "activityLogAlerts_Balancer_metrics_name": {
+            "defaultValue": "Balancer metrics",
+            "type": "String"
+        },
+        "subnets_gfs_subnet_name": {
+            "defaultValue": "gfs-subnet",
+            "type": "String"
+        },
+        "extensions_gfs_config_name": {
+            "defaultValue": "gfs-config",
+            "type": "String"
+        },
+        "extensions_gfs_config_name_1": {
+            "defaultValue": "gfs-config",
+            "type": "String"
+        },
+        "extensions_gfs_config_name_2": {
+            "defaultValue": "gfs-config",
+            "type": "String"
+        },
+        "extensions_gfs_config_name_3": {
+            "defaultValue": "gfs-config",
+            "type": "String"
+        },
+        "inboundNatRules_rule_in_name": {
+            "defaultValue": "rule_in",
+            "type": "String"
+        },
+        "virtualMachines_tarsot0_id": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/disks/tarsot0_OSDisk",
+            "type": "String"
+        },
+        "virtualMachines_tarsot0_id_1": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/disks/tarsot0_DataDisk1",
+            "type": "String"
+        },
+        "virtualMachines_tarsot0_id_2": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/disks/tarsot0_DataDisk2",
+            "type": "String"
+        },
+        "virtualMachines_tarsot1_id": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/disks/tarsot1_OSDisk",
+            "type": "String"
+        },
+        "virtualMachines_tarsot1_id_1": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/disks/tarsot1_DataDisk1",
+            "type": "String"
+        },
+        "virtualMachines_tarsot1_id_2": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/disks/tarsot1_DataDisk2",
+            "type": "String"
+        },
+        "virtualMachines_tarsot2_id": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/disks/tarsot2_OSDisk",
+            "type": "String"
+        },
+        "virtualMachines_tarsot2_id_1": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/disks/tarsot2_DataDisk1",
+            "type": "String"
+        },
+        "virtualMachines_tarsot2_id_2": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/disks/tarsot2_DataDisk2",
+            "type": "String"
+        },
+        "virtualMachines_tarsot3_id": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/disks/tarsot3_OSDisk",
+            "type": "String"
+        },
+        "virtualMachines_tarsot3_id_1": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/disks/tarsot3_DataDisk1",
+            "type": "String"
+        },
+        "virtualMachines_tarsot3_id_2": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/disks/tarsot3_DataDisk2",
+            "type": "String"
+        },
+        "activityLogAlerts_Balancer_metrics_actionGroupId": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourcegroups/default-activitylogalerts/providers/microsoft.insights/actiongroups/alertas",
+            "type": "String"
+        },
+        "loadBalancers_balancer_id": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/loadBalancers/balancer/frontendIPConfigurations/LoadBalancerFrontEnd",
+            "type": "String"
+        },
+        "loadBalancers_balancer_id_1": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/loadBalancers/balancer/backendAddressPools/back-end",
+            "type": "String"
+        },
+        "loadBalancers_balancer_id_2": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/loadBalancers/balancer/probes/sondeo",
+            "type": "String"
+        },
+        "loadBalancers_balancer_id_3": {
+            "defaultValue": "/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/loadBalancers/balancer/frontendIPConfigurations/LoadBalancerFrontEnd",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/virtualMachines/tarsot0'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_tarsot0_name')]",
+            "apiVersion": "2018-06-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_A1"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "14.04.5-LTS",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_tarsot0_name'),'_OSDisk')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('virtualMachines_tarsot0_id')]"
+                        },
+                        "diskSizeGB": 30
+                    },
+                    "dataDisks": [
+                        {
+                            "lun": 0,
+                            "name": "[concat(parameters('virtualMachines_tarsot0_name'),'_DataDisk1')]",
+                            "createOption": "Empty",
+                            "caching": "None",
+                            "managedDisk": {
+                                "storageAccountType": "Standard_LRS",
+                                "id": "[parameters('virtualMachines_tarsot0_id_1')]"
+                            },
+                            "diskSizeGB": 2048
+                        },
+                        {
+                            "lun": 1,
+                            "name": "[concat(parameters('virtualMachines_tarsot0_name'),'_DataDisk2')]",
+                            "createOption": "Empty",
+                            "caching": "None",
+                            "managedDisk": {
+                                "storageAccountType": "Standard_LRS",
+                                "id": "[parameters('virtualMachines_tarsot0_id_2')]"
+                            },
+                            "diskSizeGB": 2048
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_tarsot0_name')]",
+                    "adminUsername": "tarsot",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": false
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic0_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic0_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/virtualMachines/tarsot1'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_tarsot1_name')]",
+            "apiVersion": "2018-06-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_A1"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "14.04.5-LTS",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_tarsot1_name'),'_OSDisk')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('virtualMachines_tarsot1_id')]"
+                        },
+                        "diskSizeGB": 30
+                    },
+                    "dataDisks": [
+                        {
+                            "lun": 0,
+                            "name": "[concat(parameters('virtualMachines_tarsot1_name'),'_DataDisk1')]",
+                            "createOption": "Empty",
+                            "caching": "None",
+                            "managedDisk": {
+                                "storageAccountType": "Standard_LRS",
+                                "id": "[parameters('virtualMachines_tarsot1_id_1')]"
+                            },
+                            "diskSizeGB": 2048
+                        },
+                        {
+                            "lun": 1,
+                            "name": "[concat(parameters('virtualMachines_tarsot1_name'),'_DataDisk2')]",
+                            "createOption": "Empty",
+                            "caching": "None",
+                            "managedDisk": {
+                                "storageAccountType": "Standard_LRS",
+                                "id": "[parameters('virtualMachines_tarsot1_id_2')]"
+                            },
+                            "diskSizeGB": 2048
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_tarsot1_name')]",
+                    "adminUsername": "tarsot",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": false
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic1_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic1_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/virtualMachines/tarsot2'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_tarsot2_name')]",
+            "apiVersion": "2018-06-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_A1"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "14.04.5-LTS",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_tarsot2_name'),'_OSDisk')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('virtualMachines_tarsot2_id')]"
+                        },
+                        "diskSizeGB": 30
+                    },
+                    "dataDisks": [
+                        {
+                            "lun": 0,
+                            "name": "[concat(parameters('virtualMachines_tarsot2_name'),'_DataDisk1')]",
+                            "createOption": "Empty",
+                            "caching": "None",
+                            "managedDisk": {
+                                "storageAccountType": "Standard_LRS",
+                                "id": "[parameters('virtualMachines_tarsot2_id_1')]"
+                            },
+                            "diskSizeGB": 2048
+                        },
+                        {
+                            "lun": 1,
+                            "name": "[concat(parameters('virtualMachines_tarsot2_name'),'_DataDisk2')]",
+                            "createOption": "Empty",
+                            "caching": "None",
+                            "managedDisk": {
+                                "storageAccountType": "Standard_LRS",
+                                "id": "[parameters('virtualMachines_tarsot2_id_2')]"
+                            },
+                            "diskSizeGB": 2048
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_tarsot2_name')]",
+                    "adminUsername": "tarsot",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": false
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic2_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic2_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/virtualMachines/tarsot3'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_tarsot3_name')]",
+            "apiVersion": "2018-06-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_A1"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "14.04.5-LTS",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_tarsot3_name'),'_OSDisk')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('virtualMachines_tarsot3_id')]"
+                        },
+                        "diskSizeGB": 30
+                    },
+                    "dataDisks": [
+                        {
+                            "lun": 0,
+                            "name": "[concat(parameters('virtualMachines_tarsot3_name'),'_DataDisk1')]",
+                            "createOption": "Empty",
+                            "caching": "None",
+                            "managedDisk": {
+                                "storageAccountType": "Standard_LRS",
+                                "id": "[parameters('virtualMachines_tarsot3_id_1')]"
+                            },
+                            "diskSizeGB": 2048
+                        },
+                        {
+                            "lun": 1,
+                            "name": "[concat(parameters('virtualMachines_tarsot3_name'),'_DataDisk2')]",
+                            "createOption": "Empty",
+                            "caching": "None",
+                            "managedDisk": {
+                                "storageAccountType": "Standard_LRS",
+                                "id": "[parameters('virtualMachines_tarsot3_id_2')]"
+                            },
+                            "diskSizeGB": 2048
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_tarsot3_name')]",
+                    "adminUsername": "tarsot",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": false
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic3_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic3_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/microsoft.insights/activityLogAlerts/Balancer metrics'.",
+            "type": "microsoft.insights/activityLogAlerts",
+            "name": "[parameters('activityLogAlerts_Balancer_metrics_name')]",
+            "apiVersion": "2017-04-01",
+            "location": "Global",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "scopes": [
+                    "/subscriptions/b47aa386-3022-4458-8146-fd035816d002"
+                ],
+                "condition": {
+                    "allOf": [
+                        {
+                            "field": "category",
+                            "equals": "Security"
+                        },
+                        {
+                            "field": "resourceId",
+                            "equals": "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_balancer_name'))]"
+                        }
+                    ]
+                },
+                "actions": {
+                    "actionGroups": [
+                        {
+                            "actionGroupId": "[parameters('activityLogAlerts_Balancer_metrics_actionGroupId')]",
+                            "webhookProperties": {}
+                        }
+                    ]
+                },
+                "enabled": true,
+                "description": "Balancer alerts"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_balancer_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/loadBalancers/balancer'.",
+            "type": "Microsoft.Network/loadBalancers",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('loadBalancers_balancer_name')]",
+            "apiVersion": "2018-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "52c51968-7fea-4066-b5a9-d69428b95237",
+                "frontendIPConfigurations": [
+                    {
+                        "name": "[concat('LoadBalancerFrontEnd')]",
+                        "etag": "W/\"2ae2c2b8-e4b9-43b6-8247-3e48d6ba3f19\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.0.4",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_gfs_vnet_name'), parameters('subnets_gfs_subnet_name'))]"
+                            }
+                        }
+                    }
+                ],
+                "backendAddressPools": [
+                    {
+                        "name": "back-end",
+                        "etag": "W/\"2ae2c2b8-e4b9-43b6-8247-3e48d6ba3f19\"",
+                        "properties": {
+                            "provisioningState": "Succeeded"
+                        }
+                    }
+                ],
+                "loadBalancingRules": [
+                    {
+                        "name": "equilibrio",
+                        "etag": "W/\"2ae2c2b8-e4b9-43b6-8247-3e48d6ba3f19\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_balancer_id')]"
+                            },
+                            "frontendPort": 80,
+                            "backendPort": 80,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp",
+                            "enableTcpReset": false,
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_balancer_id_1')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_balancer_id_2')]"
+                            }
+                        }
+                    }
+                ],
+                "probes": [
+                    {
+                        "name": "sondeo",
+                        "etag": "W/\"2ae2c2b8-e4b9-43b6-8247-3e48d6ba3f19\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "port": 80,
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    }
+                ],
+                "inboundNatRules": [
+                    {
+                        "name": "rule_in",
+                        "etag": "W/\"2ae2c2b8-e4b9-43b6-8247-3e48d6ba3f19\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_balancer_id_3')]"
+                            },
+                            "frontendPort": 443,
+                            "backendPort": 443,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp",
+                            "enableTcpReset": false
+                        }
+                    }
+                ],
+                "inboundNatPools": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_gfs_vnet_name'), parameters('subnets_gfs_subnet_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/networkInterfaces/nic0'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_nic0_name')]",
+            "apiVersion": "2018-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "92a4d007-eb59-4c2a-b241-54f3f0c48816",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"50a9169e-454c-4681-be82-6c228784eb26\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.0.8",
+                            "privateIPAllocationMethod": "Static",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_pip0_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_gfs_vnet_name'), parameters('subnets_gfs_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4",
+                            "loadBalancerBackendAddressPools": [
+                                {
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_balancer_name')), '/backendAddressPools/back-end')]"
+                                }
+                            ],
+                            "loadBalancerInboundNatRules": [
+                                {
+                                    "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_balancer_name'), parameters('inboundNatRules_rule_in_name'))]"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "jpecnavcuxsuvl3rzhbws3myxf.ax.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-38-69-6C",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "primary": true,
+                "tapConfigurations": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_pip0_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_gfs_vnet_name'), parameters('subnets_gfs_subnet_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_balancer_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_balancer_name'), parameters('inboundNatRules_rule_in_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/networkInterfaces/nic1'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_nic1_name')]",
+            "apiVersion": "2018-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "3649968a-e6d0-4952-b1db-718c9f521299",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"0c55eeaf-981b-4600-9d66-e65c4fdaa161\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.0.9",
+                            "privateIPAllocationMethod": "Static",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_pip1_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_gfs_vnet_name'), parameters('subnets_gfs_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "jpecnavcuxsuvl3rzhbws3myxf.ax.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-39-2B-A8",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "primary": true,
+                "tapConfigurations": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_pip1_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_gfs_vnet_name'), parameters('subnets_gfs_subnet_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/networkInterfaces/nic2'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_nic2_name')]",
+            "apiVersion": "2018-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "5f2b9a4e-53eb-4627-85fe-0fa61b8ded5f",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"59f43589-78af-43bb-892c-cca6579f8cee\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.0.10",
+                            "privateIPAllocationMethod": "Static",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_pip2_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_gfs_vnet_name'), parameters('subnets_gfs_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "jpecnavcuxsuvl3rzhbws3myxf.ax.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-28-71-90",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "primary": true,
+                "tapConfigurations": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_pip2_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_gfs_vnet_name'), parameters('subnets_gfs_subnet_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/networkInterfaces/nic3'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_nic3_name')]",
+            "apiVersion": "2018-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "728e80b4-e97f-402c-96b0-e6e226aff1b3",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"2cc0aa94-c656-4d67-a7d9-418d08a0d5a9\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.0.11",
+                            "privateIPAllocationMethod": "Static",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_pip3_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_gfs_vnet_name'), parameters('subnets_gfs_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "jpecnavcuxsuvl3rzhbws3myxf.ax.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-38-C4-F2",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "primary": true,
+                "tapConfigurations": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_pip3_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_gfs_vnet_name'), parameters('subnets_gfs_subnet_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/publicIPAddresses/pip0'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('publicIPAddresses_pip0_name')]",
+            "apiVersion": "2018-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "8a5dffa4-9ef4-40ab-b9de-b27049bd7f82",
+                "ipAddress": "13.73.177.85",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "ipTags": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/publicIPAddresses/pip1'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('publicIPAddresses_pip1_name')]",
+            "apiVersion": "2018-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "ed55b2e0-1aed-4e62-8b67-44999e69deb0",
+                "ipAddress": "13.73.181.247",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "ipTags": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/publicIPAddresses/pip2'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('publicIPAddresses_pip2_name')]",
+            "apiVersion": "2018-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "e903b502-1855-4f70-9698-e1bb1a98c8b2",
+                "ipAddress": "40.115.25.20",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "ipTags": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/publicIPAddresses/pip3'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('publicIPAddresses_pip3_name')]",
+            "apiVersion": "2018-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "bd469d38-e4bb-4050-b7ec-dc5c766636f9",
+                "ipAddress": "40.115.26.145",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "ipTags": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/virtualNetworks/gfs-vnet'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_gfs_vnet_name')]",
+            "apiVersion": "2018-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "8226c84b-a5a2-4ae5-afb1-c9c3697598bd",
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "gfs-subnet",
+                        "etag": "W/\"c6d960fc-5036-4ec5-9647-cc6619fae05a\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "10.0.0.0/24",
+                            "delegations": []
+                        }
+                    }
+                ],
+                "virtualNetworkPeerings": [],
+                "enableDdosProtection": false,
+                "enableVmProtection": false
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Storage/storageAccounts/tarsot'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_RAGRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "name": "[parameters('storageAccounts_tarsot_name')]",
+            "apiVersion": "2018-07-01",
+            "location": "westeurope",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": true,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                },
+                "accessTier": "Hot"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/virtualMachines/tarsot0/extensions/gfs-config'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_tarsot0_name'), '/', parameters('extensions_gfs_config_name'))]",
+            "apiVersion": "2018-06-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/gluster-file-system/azuregfs.sh"
+                    ]
+                },
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_gfs_config_storageAccountName')]",
+                    "storageAccountKey": "[parameters('extensions_gfs_config_storageAccountKey')]",
+                    "commandToExecute": "[parameters('extensions_gfs_config_commandToExecute')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_tarsot0_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/virtualMachines/tarsot1/extensions/gfs-config'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_tarsot1_name'), '/', parameters('extensions_gfs_config_name_1'))]",
+            "apiVersion": "2018-06-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/gluster-file-system/azuregfs.sh"
+                    ]
+                },
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_gfs_config_storageAccountName_1')]",
+                    "storageAccountKey": "[parameters('extensions_gfs_config_storageAccountKey_1')]",
+                    "commandToExecute": "[parameters('extensions_gfs_config_commandToExecute_1')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_tarsot1_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/virtualMachines/tarsot2/extensions/gfs-config'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_tarsot2_name'), '/', parameters('extensions_gfs_config_name_2'))]",
+            "apiVersion": "2018-06-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/gluster-file-system/azuregfs.sh"
+                    ]
+                },
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_gfs_config_storageAccountName_2')]",
+                    "storageAccountKey": "[parameters('extensions_gfs_config_storageAccountKey_2')]",
+                    "commandToExecute": "[parameters('extensions_gfs_config_commandToExecute_2')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_tarsot2_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Compute/virtualMachines/tarsot3/extensions/gfs-config'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_tarsot3_name'), '/', parameters('extensions_gfs_config_name_3'))]",
+            "apiVersion": "2018-06-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/gluster-file-system/azuregfs.sh"
+                    ]
+                },
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_gfs_config_storageAccountName_3')]",
+                    "storageAccountKey": "[parameters('extensions_gfs_config_storageAccountKey_3')]",
+                    "commandToExecute": "[parameters('extensions_gfs_config_commandToExecute_3')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_tarsot3_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/loadBalancers/balancer/inboundNatRules/rule_in'.",
+            "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+            "name": "[concat(parameters('loadBalancers_balancer_name'), '/', parameters('inboundNatRules_rule_in_name'))]",
+            "apiVersion": "2018-10-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "frontendIPConfiguration": {
+                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_balancer_name')), '/frontendIPConfigurations/LoadBalancerFrontEnd')]"
+                },
+                "frontendPort": 443,
+                "backendPort": 443,
+                "enableFloatingIP": false,
+                "idleTimeoutInMinutes": 4,
+                "protocol": "Tcp",
+                "enableTcpReset": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_balancer_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/b47aa386-3022-4458-8146-fd035816d002/resourceGroups/tarsot/providers/Microsoft.Network/virtualNetworks/gfs-vnet/subnets/gfs-subnet'.",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "name": "[concat(parameters('virtualNetworks_gfs_vnet_name'), '/', parameters('subnets_gfs_subnet_name'))]",
+            "apiVersion": "2018-10-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "10.0.0.0/24",
+                "delegations": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_gfs_vnet_name'))]"
+            ]
+        }
+    ]
+}

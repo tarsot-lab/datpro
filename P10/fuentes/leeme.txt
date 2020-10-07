@@ -1,0 +1,10 @@
+Descripción: 
+
+Códigos de implementación para Microsoft Azure. Permite el despliegue
+de un clúster de 4 nodos, bajo Ubuntu Server, con sistema redundante de 
+almacenamiento GlusterFS FR-2. Cada nodo, tiene una IP pública y dos
+discos dispuestos en RAID0.
+
+CPD (P10) ETSIIT - UGR
+Juan José García Melgar
+ Grupo A - 2018/2019

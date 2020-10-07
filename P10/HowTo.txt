@@ -1,0 +1,36 @@
+Plantilla que implementa un Gluster File System en Ubuntu y puedo disponer de 2, 4, 6 u 8 nodos en un cluster, con un factor de replicación de 2. 
+Cada nodo tiene una IP pública y 2 discos dispuestos en RAID0.
+
+Deploys a N node Gluster File System
+https://azure.microsoft.com/es-mx/resources/templates/gluster-file-system/
+
+This template deploys a 2, 4, 6, or 8 node Gluster File System with 2 replicas on Ubuntu
+
+Parámetros
+NOMBRE DEL PARÁMETRO	DESCRIPCIÓN
+hostOs			OS to install on the host system (Centos was removed due to breaking change)
+scaleNumber		Number of nodes in the gluster file system
+adminUsername		ssh user name
+adminPassword		ssh password
+vmSize			VM size for the nodes
+diskSize		The size of the datadisks to be striped. The total capacity will be this size multiplied by the number of data disks you specify.
+vmNamePrefix		VM name prefix, a number will be appended for each node
+vnetAddressPrefix	virtual network CIDR in which the cluster will be created
+gfsSubnetName		name of the subnet for the Gluster nodes
+gfsSubnetPrefix		CIDR of the subnet for the Gluster nodes
+volumeName		Gluster file system volume name
+location		Location for all resources.
+_artifactsLocation	The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and 				this value will be automatically generated.
+_artifactsLocationSasToken	The sasToken required to access _artifactsLocation. When the template is deployed using the accompanying scripts, a sasToken will be automatically generated.
+
+
+Uso de la plantilla
+
+PowerShell
+
+New-AzureRmResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <resource-group-name> -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/gluster-file-system/azuredeploy.json
+
+Línea de comandos
+
+azure config mode arm
+azure group deployment create <my-resource-group> <my-deployment-name> --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/gluster-file-system/azuredeploy.json

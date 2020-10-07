@@ -1,0 +1,2 @@
+#clock_gettime()
+https://users.pja.edu.pl/~jms/qnx/help/watcom/clibref/qnx/clock_gettime.html
